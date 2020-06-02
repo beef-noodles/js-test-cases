@@ -2,9 +2,16 @@ import { changeHref } from '../src/attribute'
 
 describe('attribute', () => {
   beforeEach(() => {
-    Object.defineProperty(window.location, 'href', {
-      value: '',
+    Object.defineProperty(window, 'location', {
+      value: {
+        href: '',
+        writable: true,
+        enumerable: true,
+        configurable: true,
+      },
       writable: true,
+      enumerable: true,
+      configurable: true,
     });
   })
   it('Object.defineProperty', () => {
