@@ -5,14 +5,12 @@ describe('attribute', () => {
     Object.defineProperty(window, 'location', {
       value: {
         href: '',
-        writable: true,
-        enumerable: true,
-        configurable: true,
       },
-      writable: true,
-      enumerable: true,
-      configurable: true,
     });
+    // doesn't work
+    // Object.defineProperty(window.location, 'href', {
+    //   value: '',
+    // });
   })
   it('Object.defineProperty', () => {
     const newURL = "http://test.com"
