@@ -3,5 +3,5 @@ export const changeHref = (value: string) => {
 }
 
 export const reload = () => {
-  window.location.reload()
+  window.location.replace(window.location.href + '+')
 }

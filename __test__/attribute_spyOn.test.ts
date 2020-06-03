@@ -3,7 +3,7 @@ import { changeHref } from '../src/attribute'
 describe('attribute', () => {
   let windowSpy;
   beforeEach(() => {
-    windowSpy= jest.spyOn(global, 'window', 'get')
+    windowSpy= jest.spyOn(window, 'location', 'get')
   })
   afterEach(() =>{
     windowSpy.mockRestore()
@@ -13,9 +13,7 @@ describe('attribute', () => {
     expect(window.location.href).toBe('http://localhost/')
     const newURL = "http://test.com"
     windowSpy.mockImplementation(() => ({
-      location: {
         href: ''
-      }
     }))
     changeHref(newURL)
     console.log(window.location.href)

@@ -2,13 +2,8 @@ import { reload } from '../src/attribute'
 
 describe('method', () => {
   let windowSpy
-  let originalWindow
   beforeEach(() => {
-    originalWindow = global.window
-    windowSpy = jest.spyOn(global.window, 'location', 'get').mockImplementation(() => ({
-      ...originalWindow.location,
-      reload: jest.fn(),
-    }))
+    windowSpy = jest.spyOn(window, 'location', 'get')
   })
   afterEach(() => {
     windowSpy.mockRestore()
@@ -17,6 +12,10 @@ describe('method', () => {
     expect(jest.isMockFunction(windowSpy)).toBe(true)
   });
   it('spyOn for reload', () => {
+    windowSpy.mockImplementation(() => ({
+      href: 'http://test.com',
+      replace: jest.fn(),
+    }))
     expect(windowSpy).not.toHaveBeenCalled()
     reload()
     expect(windowSpy).toHaveBeenCalled();

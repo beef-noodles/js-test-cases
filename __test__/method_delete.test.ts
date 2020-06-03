@@ -5,20 +5,20 @@ describe('method', () => {
   beforeEach(() => {
     delete window.location;
     window.location = {
-      reload: jest.fn()
+      replace: jest.fn()
     }
   })
   afterEach(() => {
     window.location = location
   })
   it('mocks `reload`', () => {
-    expect(jest.isMockFunction(window.location.reload)).toBe(true);
+    expect(jest.isMockFunction(window.location.replace)).toBe(true);
   });
   it('reload', () => {
     const original = window.location.href
-    expect(window.location.reload).not.toHaveBeenCalled();
+    expect(window.location.replace).not.toHaveBeenCalled();
     reload()
     expect(window.location.href).toBe(original)
-    expect(window.location.reload).toHaveBeenCalled();
+    expect(window.location.replace).toHaveBeenCalled();
   })
 })

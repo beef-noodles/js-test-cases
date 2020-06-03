@@ -14,10 +14,8 @@ describe('method', () => {
     expect(jest.isMockFunction(attribute.reload)).toBe(true);
   });
   it('reload', () => {
-    const original = window.location.href
     expect(attribute.reload).not.toHaveBeenCalled();
     attribute.reload()
-    expect(window.location.href).toBe(original)
     expect(attribute.reload).toHaveBeenCalled()
     expect(attribute.reload).toBeCalledTimes(1)
   })
