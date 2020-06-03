@@ -3,5 +3,9 @@ export const changeHref = (value: string) => {
 }
 
 export const reload = () => {
-  window.location.replace(window.location.href + '+')
+  window.location.replace(window.location.href + 'random')
+}
+
+export const addHash = (hash: string): string => {
+  return window.location.href + `#${hash}`
 }

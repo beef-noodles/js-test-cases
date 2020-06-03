@@ -1,4 +1,10 @@
 
+# Window 对象的测试(jest)方法总结
+
+* delete - 在原对象上进行测试
+* Object.defineProperty - 重新定义属性
+* mockfile - mock 整个被测文件
+* spyOn - 对特定方法进行mock
 
 
 ## Ref
