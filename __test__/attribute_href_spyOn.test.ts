@@ -16,7 +16,6 @@ describe('attribute', () => {
         href: ''
     }))
     changeHref(newURL)
-    console.log(window.location.href)
     expect(windowSpy).toHaveBeenCalled()
   })
 })
