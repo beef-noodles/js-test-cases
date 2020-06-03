@@ -17,6 +17,5 @@ describe('attribute', () => {
     }))
     changeHref(newURL)
     expect(windowSpy).toHaveBeenCalled()
-    expect(window.location.href).toBe(newURL)
   })
 })
