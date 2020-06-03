@@ -14,7 +14,6 @@ describe('method', () => {
   it('spyOn for addHash', () => {
     windowSpy.mockImplementation(() => ({
       href: 'http://test.com',
-      replace: jest.fn(),
     }))
     expect(windowSpy).not.toHaveBeenCalled()
     expect(addHash('123')).toEqual('http://test.com#123')

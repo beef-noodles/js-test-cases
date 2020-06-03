@@ -1,10 +1,11 @@
-import { reload } from '../src/attribute'
+import { replace } from '../src/attribute'
 
 describe('method', () => {
   const { location } = window
   beforeEach(() => {
-    delete window.location;
+    delete window.location
     window.location = {
+      ...location,
       replace: jest.fn()
     }
   })
@@ -12,13 +13,13 @@ describe('method', () => {
     window.location = location
   })
   it('mocks `reload`', () => {
-    expect(jest.isMockFunction(window.location.replace)).toBe(true);
+    expect(jest.isMockFunction(window.location.replace)).toBe(true)
   });
   it('reload', () => {
     const original = window.location.href
-    expect(window.location.replace).not.toHaveBeenCalled();
-    reload()
+    expect(window.location.replace).not.toHaveBeenCalled()
+    replace()
     expect(window.location.href).toBe(original)
-    expect(window.location.replace).toHaveBeenCalled();
+    expect(window.location.replace).toHaveBeenCalled()
   })
 })

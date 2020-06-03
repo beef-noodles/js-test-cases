@@ -1,4 +1,4 @@
-import { reload } from '../src/attribute'
+import { replace } from '../src/attribute'
 
 describe('method', () => {
   let windowSpy
@@ -8,16 +8,16 @@ describe('method', () => {
   afterEach(() => {
     windowSpy.mockRestore()
   })
-  it('mocks `reload`', () => {
+  it('mocks `replace`', () => {
     expect(jest.isMockFunction(windowSpy)).toBe(true)
-  });
-  it('spyOn for reload', () => {
+  })
+  it('spyOn for replace', () => {
     windowSpy.mockImplementation(() => ({
       href: 'http://test.com',
       replace: jest.fn(),
     }))
     expect(windowSpy).not.toHaveBeenCalled()
-    reload()
-    expect(windowSpy).toHaveBeenCalled();
+    replace()
+    expect(windowSpy).toHaveBeenCalled()
   })
 })
