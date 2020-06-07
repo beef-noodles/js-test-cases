@@ -1,16 +1,16 @@
 import { changeHref } from '../src/attribute'
 
 describe('attribute', () => {
+  const { location } = window
   beforeEach(() => {
     Object.defineProperty(window, 'location', {
       value: {
         href: '',
       },
     });
-    // doesn't work
-    // Object.defineProperty(window.location, 'href', {
-    //   value: '',
-    // });
+  })
+  afterEach(() => {
+    Object.defineProperty(window, 'location', location)
   })
   it('Object.defineProperty', () => {
     const newURL = "http://test.com"
