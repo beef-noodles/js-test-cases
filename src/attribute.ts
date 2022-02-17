@@ -18,7 +18,6 @@ export const sendMessage = (message) => {
 }
 export const eventListener = ()=> {
   const messageProcessor = (evt) => {
-    console.log(evt)
     window.postMessage({data: evt.data}, '*')
     window.removeEventListener('message', messageProcessor)
   }
