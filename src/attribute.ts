@@ -16,3 +16,11 @@ export const sendMessage = (message) => {
     data: message,
   }, '*' )
 }
+export const eventListener = ()=> {
+  const messageProcessor = (evt) => {
+    console.log(evt)
+    window.postMessage({data: evt.data}, '*')
+    window.removeEventListener('message', messageProcessor)
+  }
+  window.addEventListener('message', messageProcessor)
+}
