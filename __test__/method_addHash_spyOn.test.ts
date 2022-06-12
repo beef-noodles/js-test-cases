@@ -15,6 +15,7 @@ describe('method', () => {
     windowSpy.mockImplementation(() => ({
       href: 'http://test.com',
     }))
+    
     expect(windowSpy).not.toHaveBeenCalled()
     expect(addHash('123')).toEqual('http://test.com#123')
     expect(windowSpy).toHaveBeenCalled();

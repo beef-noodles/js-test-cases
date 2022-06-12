@@ -17,8 +17,11 @@ describe('method', () => {
   });
   it('reload', () => {
     const original = window.location.href
+
     expect(window.location.replace).not.toHaveBeenCalled()
+
     replace()
+    
     expect(window.location.href).toBe(original)
     expect(window.location.replace).toHaveBeenCalled()
   })

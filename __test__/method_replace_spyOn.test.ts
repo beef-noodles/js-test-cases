@@ -16,8 +16,11 @@ describe('method', () => {
       href: 'http://test.com',
       replace: jest.fn(),
     }))
+
     expect(windowSpy).not.toHaveBeenCalled()
+
     replace()
+    
     expect(windowSpy).toHaveBeenCalled()
   })
 })

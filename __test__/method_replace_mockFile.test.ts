@@ -15,7 +15,9 @@ describe('method', () => {
   })
   it('replace', () => {
     expect(attribute.replace).not.toHaveBeenCalled()
+
     attribute.replace()
+    
     expect(attribute.replace).toHaveBeenCalled()
     expect(attribute.replace).toBeCalledTimes(1)
   })

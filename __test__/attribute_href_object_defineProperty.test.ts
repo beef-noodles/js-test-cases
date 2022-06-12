@@ -14,7 +14,9 @@ describe('attribute', () => {
   })
   it('Object.defineProperty', () => {
     const newURL = "http://test.com"
+
     changeHref(newURL)
+    
     expect(window.location.href).toBe(newURL)
   })
 })

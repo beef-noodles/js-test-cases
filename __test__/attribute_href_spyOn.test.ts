@@ -15,7 +15,9 @@ describe('attribute', () => {
     windowSpy.mockImplementation(() => ({
         href: ''
     }))
+
     changeHref(newURL)
+    
     expect(windowSpy).toHaveBeenCalled()
   })
 })

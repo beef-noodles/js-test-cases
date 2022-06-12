@@ -4,7 +4,6 @@ describe('attribute', () => {
   const { location } = window
   beforeEach(() => {
     delete window.location
-
   })
   afterEach(() => {
     window.location = location
@@ -15,7 +14,9 @@ describe('attribute', () => {
       ...location,
       href: ''
     }
+
     changeHref(newURL)
+
     expect(window.location.href).toBe(newURL)
   })
 })
