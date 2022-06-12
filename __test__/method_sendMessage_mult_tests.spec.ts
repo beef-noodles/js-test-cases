@@ -1,7 +1,7 @@
 import {sendMessage} from '../src/attribute'
 
 describe('multiple', () => {
-  it('sendMessage test with multiple test method', () => {
+  it('should be send when invoke the method sendMessage', () => {
     Object.defineProperty(window, 'top', {
       value: window,
       writable: true,
@@ -12,8 +12,9 @@ describe('multiple', () => {
       writable: true,
       value: jest.fn(),
     })
+
     sendMessage('message')
-    expect(window.parent.postMessage).toHaveBeenCalled()
+
     expect(window.parent.postMessage).toBeCalledTimes(1)
   })
 })
