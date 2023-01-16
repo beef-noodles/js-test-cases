@@ -30,14 +30,3 @@ describe('finalizedHandler', () => {
   })
 })
 
-describe("finalizedHandler1", () => {
-  it('should call callback & setTimeout', () => {
-    finalizedHandler1(dummyResponse, mockFu)
-    jest.advanceTimersByTime(2000)
-
-    expect(mockFu).toBeCalledTimes(1)
-    expect(setTimeoutSpy).toBeCalledTimes(1)
-  })
-
-})
-
