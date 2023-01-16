@@ -28,3 +28,9 @@ jobs:
         cache: 'yarn'
     - run: yarn
     - run: yarn test
+    - name: Codecov
+      run: |
+        curl -Os https://uploader.codecov.io/latest/linux/codecov
+        chmod +x codecov
+        ./codecov
+
