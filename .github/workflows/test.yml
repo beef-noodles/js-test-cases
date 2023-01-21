@@ -33,4 +33,9 @@ jobs:
         curl -Os https://uploader.codecov.io/latest/linux/codecov
         chmod +x codecov
         ./codecov
+    - uses: actions/upload-artifact@v3
+      with:
+        name: test-coverage-report
+        path: ./coverage
+        retention-days: 1
 
