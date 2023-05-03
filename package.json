@@ -17,5 +17,8 @@
     "babel-jest": "^29.0.0",
     "jest": "^29.0.0",
     "ts-jest": "^29.0.0"
+  },
+  "dependencies": {
+    "jest-environment-jsdom": "^29.5.0"
   }
 }
