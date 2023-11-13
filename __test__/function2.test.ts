@@ -9,9 +9,11 @@ jest.mock("moment", () => {
   };
 });
 
+const BEFORE_TIME = "2022-01-10";
+
 describe("Test Fucntion like moment() with jest.mock", () => {
   it("should return true given parameter is 2022-10-10", () => {
-    const result = isBeforeNow("2022-01-10");
+    const result = isBeforeNow(BEFORE_TIME);
 
     expect(result).toBeTruthy();
   });
