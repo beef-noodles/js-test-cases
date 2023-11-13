@@ -19,6 +19,7 @@
     "ts-jest": "^29.0.0"
   },
   "dependencies": {
-    "jest-environment-jsdom": "^29.5.0"
+    "jest-environment-jsdom": "^29.5.0",
+    "moment": "^2.29.4"
   }
 }
